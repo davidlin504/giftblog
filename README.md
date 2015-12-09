@@ -1,9 +1,14 @@
-# ty
+# instruction
 
-this is for node.js test and practice 1234
+this is a blog file for demonstation 
+
+connect pickfile
+
+encode url
 
 
-5566 no 1
+share for facebook and line 
+
+watch time count using url
 
 
-gift local
