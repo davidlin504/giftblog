@@ -547,9 +547,12 @@ app.post('/phome/:id', function(req, res) {
 
     app.get('/post/:slug', function(req, res,next) {
 
+        var place=req.params.slug;
+                    place=place.replace(/ /g,"%20")
+
   
         //    if user is not logged-in redirect back to login page //
-            AM.addone(req.params.slug, function(e, o) {
+            AM.addone(place, function(e, o) {
 
 
             if (e) {
@@ -573,9 +576,12 @@ app.post('/phome/:id', function(req, res) {
 
 app.get('/post/:slug', function(req, res) {
 
+    var place=req.params.slug;
+                    place=place.replace(/ /g,"%20")
+
       
                 
-            AM.getproduct(req.params.slug,function(e, products) {
+            AM.getproduct(place,function(e, products) {
                 res.render('pages/story', {
                     title: 'Account List',
                     accts: products
