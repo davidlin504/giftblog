@@ -171,7 +171,7 @@ res.redirect('/');
                 // res.writeHead(302, {Location: encodeURI('http://www.facebook.com/sharer.php?u=http://blog.igift.tw/post/聖誕示你的愛 愛的手工小書')});
 
                     var place=req.params.slug;
-                    place=place.replace(" ","%20")
+                    place=place.replace(/ /g,"%20")
 
                 res.redirect("http://line.naver.jp/R/msg/text/?http://blogec.igift.tw/post/"+encodeURIComponent(place));
 
