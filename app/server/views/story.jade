@@ -1,0 +1,56 @@
+
+
+extends layoutgift
+
+block title
+	link(rel="stylesheet" href="/css/gift.css")
+	link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+
+block content
+
+	table.table.table-bordered.table-striped
+			thead
+				tr
+					th(style='width:40px') #
+					th(style='width:180px') Name
+					th(style='width:200px') Location
+					th(style='width:180px') Username
+					th Account Created
+			tbody
+			- for (var i = 0; i < accts.length; i++)
+				tr
+					td= i+1
+						a.btn(href='del/'+accts[i]._id) delete
+					td= lg[i].name
+					td= lg[i].country
+					td= lg[i].user
+					td= lg[i].date
+					td=	lg[i].url
+						img(src=lg[i].url)
+
+
+
+	.article
+		.container
+			.row
+				.col-md-9
+					h1= lg[0].name
+					img
+					.fancy-line
+					p.clock 2015年11月18號
+					section
+						p= lg[0].name
+							pre 隨著聖誕節的氣氛逐漸到來，已經可以感受到那濃濃的假期氣氛：）每一年都想著要去哪裡跨年、去哪裡玩到徹夜不眠…有時候，你也可以選擇找一個對的人，然後送他一份禮物，讓他從那禮物中感受到那無法抗拒的熱誠！聖誕夜，讓喜歡的人伴隨你的溫暖小物入眠，醒來時，還會因為看到你的禮物，嘴角有一抹上揚的微笑。送一個床邊小物給喜歡的他或她吧。
+
+						- for (var i = 0; i <accts.length; i++) 
+							h1= accts[i].title
+							pre= accts[i].content
+							img(src=accts[i].iurl)
+							.icon
+								a.btn(href=accts[i].vurl) 我要看更多	
+
+
+
+
+
+

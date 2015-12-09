@@ -1,0 +1,33 @@
+body {
+
+	margin-top: 50px;
+
+}
+ul.nav li {
+
+	display: inline-block;
+}
+
+ul.nav li a{
+
+	padding: 10px 15px;
+}
+
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-align: center;
+  
+}
+.nav li {
+
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px){
+ ul.nav li {
+    display: block;
+}
+}

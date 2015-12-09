@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	script(type="text/javascript" src="//api.filepicker.io/v2/filepicker.js")
+	div.form(style='text-align:center; margin:0 auto;' )
+		h2 新增商品
+		form(action="/test" method="POST")
+			label 頁面位置
+			input(input type="text" name="post" value = "" placeholder='name')
+			label 商品標題
+			input(input type="text" name="title" value = "" placeholder='name')
+			label 商品描述
+			input(input type="text" name="content" value ="" placeholder='content')
+			label 商品影片
+			input(input type="text" name="videosrc" value ="" placeholder='content')
+			label 商品圖片
+			input(input type="text" name="imgsrc" value ="" placeholder='content' id='imgu')
+			img#demo(style="width:100px;")
+			label 商品資訊連結
+			input(input type="text" name="linksrc" value ="" placeholder='content'  )
+
+			input(type="submit" value="新增")
+
+	input(type="filepicker" data-fp-apikey="Ags8Dmj68RqGRjMbMNHCDz" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-multiple="true" data-fp-maxsize="20000000" onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out);document.getElementById('demo').src=event.fpfiles[0].url;document.getElementById('imgu').value=event.fpfiles[0].url;")
+
+
+
+block scripts	
+	script(src='/vendor/jquery.min.js')
+	//- script(type="text/javascript" src='/js/alter.js')
+	script(src="http://malsup.github.com/jquery.form.js")
+	link(rel='stylesheet', href='/css/styleup.css')
+
+

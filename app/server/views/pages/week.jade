@@ -1,0 +1,45 @@
+extends layoutgift
+
+
+block title
+
+
+
+block content
+	.sup
+		img(src='http://res.cloudinary.com/dif66eh4c/image/upload/v1448901817/網站用banner_basker.png')
+	.mainxmas
+			.row
+				- for (var i = 0; i <accts.length; i++)
+					.col-md-3.col-sm-6
+						a.thumbnail(href='/post/'+accts[i].title )
+							.thumbnail-con
+									img(src=accts[i].iurl)
+
+									h3=accts[i].title
+									p
+										span= accts[i].content
+										br
+										span.more    繼續閱讀...
+									
+									
+										
+
+
+
+
+							ul.pitem-info
+										li
+											p.author= (accts[i].time==null) ? "2015/12/02" : accts[i].time
+										li.info-item
+											img(src="http://res.cloudinary.com/dif66eh4c/image/upload/v1449240745/12319293_10207330579636074_479186905_n_fab85x.jpg" style="width:20px;")
+											span= accts[i].count
+										li.info-item
+											img(src="http://res.cloudinary.com/dif66eh4c/image/upload/v1449240745/12312464_10207330578276040_1448044199_n_vyp4tl.jpg" style="width:20px;")
+											span= accts[i].share
+										//- .pull-right.fb-share-button(data-href="http://blog.igift.tw/post/"+accts[i].title data-layout="button_count")
+	
+
+	script.
+		- $( "ul.nav li:nth-child(1) a" ).addClass( "on" );
+

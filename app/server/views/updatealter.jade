@@ -1,0 +1,47 @@
+extends layout
+
+block content
+	script(src='/vendor/jquery.min.js')
+	//- script(type="text/javascript" src='/js/alter.js')
+	script(src="http://malsup.github.com/jquery.form.js")
+	script(type="text/javascript" src="//api.filepicker.io/v2/filepicker.js")
+
+	div.form(style='text-align:center; margin:0 auto;' )
+		h2 修改商品資訊
+		form(action="/phome/"+product._id method="POST")
+			label id
+			input(input type="text" name="_id" value = product._id placeholder='name')
+			label 位置
+			input(input type="text" name="post" value = product.post placeholder='name' )
+			label 標題
+			input(input type="text" name="title" value = product.title placeholder='name')
+			
+			label 描述
+			input(input type="text" name="content" value= product.content placeholder='content')
+			label 影片
+			input(input type="text" name="videosrc" value= product.vurl placeholder='content')
+			label 圖片
+			input(input type="text" name="imgsrc" value= product.iurl placeholder='content' id='imgu')
+			img#demo(style="width:100px;")
+			label 連結
+			input(input type="text" name="linksrc" value= product.lurl placeholder='content')
+			label 建立時間
+			input(input type="text" name="time" value= product.time placeholder='content')
+			input(type="submit" value="修改")
+
+	input(type="filepicker" data-fp-apikey="Ags8Dmj68RqGRjMbMNHCDz" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-multiple="true" data-fp-maxsize="20000000" onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out);document.getElementById('demo').src=event.fpfiles[0].url;document.getElementById('imgu').value=event.fpfiles[0].url;")
+			
+
+
+
+
+			
+			
+
+
+
+block scripts	
+	link(rel='stylesheet', href='/css/styleup.css')
+
+
+

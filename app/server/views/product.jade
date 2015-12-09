@@ -1,0 +1,75 @@
+
+extends layout
+	
+
+
+block content
+	script(src='/vendor/jquery.min.js')
+	script(src='/js/views/search.js')
+	div.navbar.navbar-fixed-top
+		div.navbar-inner
+			div.container-fluid
+				ul#global-nav.nav.pull-left
+					a(href='#').brand Control Panel
+				button#btn-logout.btn.btn-primary
+					i.icon-lock.icon-white
+					| Sign Out
+	.header
+		.container
+			ul.nav
+				li
+					a(href="/week") week
+				li
+					a(href="/xmas") xmas
+				li
+					a(href="/post/week") post/week
+				li
+					a#btn-logout.btn.btn-primary Logout
+				li
+	a.btn(href="/alter") 增加商品
+	input(type="text" id="int" value="" onChange="run()")
+	a.btn(href="" id="search") 依頁面位置搜尋
+	p 僅顯示最新6筆結果 
+	div.container(style='margin:20px')
+		table.table.table-bordered.table-striped
+			thead
+				tr
+					th(style='width:120px') #
+					th(style='width:40px') 頁面位置
+					th(style='width:180px') title
+					th(style='width:200px') content
+					th(style='width:180px') video
+					th picture
+					th count
+					th share
+					th user
+					th create time
+
+			tbody
+			- for (var i = 0; i <accts.length; i++) 
+				tr
+					td= i+1
+						a.btn(href='/delproduct/'+accts[i]._id) 刪除
+						a.btn(href='/productal/'+accts[i]._id) 修改
+					td= accts[i].post
+					td= accts[i].title
+					td= accts[i].content
+					td= accts[i].vurl
+					td= accts[i].lurl
+						img(src=accts[i].iurl)
+					td= accts[i].count
+					td= accts[i].share
+					td= accts[i].user
+					td= accts[i].time
+
+		
+
+
+block scripts
+	script(src='/vendor/jquery.form.js')
+	script(src='/vendor/bootstrap-modal.js')
+	script(src='/vendor/bootstrap-transition.js')
+	script(src='/js/views/home.js')
+	script(src='/js/controllers/homeController.js')
+	script(src='/js/form-validators/accountValidator.js')
+	link(rel='stylesheet' href='/css/product.css')

@@ -1,0 +1,79 @@
+
+
+extends layoutgift
+
+block title
+
+	link(rel="stylesheet" href="/css/gift.css")
+	link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+	meta(property="og:url"           content="http://blog.igift.tw/post/"+accts[0].post )
+	meta(meta property="og:type"     content="website" )
+	meta(property="og:title"         content=accts[0].title)
+	meta(property="og:description"   content=accts[0].content)
+	meta(property="og:image"         content=accts[0].iurl )
+
+block content
+
+
+	.article
+		.container
+			.row
+				.col-md-9
+					
+					img(src=accts[0].iurl)
+					h2= accts[0].title
+					section
+						p
+							pre= accts[0].content
+					.fancy-line
+						p= accts[0].time
+
+						- for (var i = 1; i <accts.length; i++) 
+							h3= accts[i].title
+							pre= accts[i].content
+							img(src=accts[i].iurl)
+							if accts[i].lurl == ""
+									.icon.hidden
+										a.btn(href=accts[i].lurl) 了解更多
+							else
+									.icon
+										a.btn(href=accts[i].lurl) 了解更多
+					
+						.shareicon
+							span 分享至
+							a(href="/sharefb/"+accts[0].post target="_blank")
+								img(src="http://res.cloudinary.com/dif66eh4c/image/upload/v1449224754/square-facebook-512_leglze.png")
+							//- img.fb-share-button(src="http://res.cloudinary.com/dif66eh4c/image/upload/v1449224754/square-facebook-512_leglze.png" data-href="http://blog.igift.tw/post/"+accts[0].post data-layout="link" style="width:60px;")
+							a(href="/sharele/"+accts[0].post target="_blank")
+								img(border="0" src="http://res.cloudinary.com/dif66eh4c/image/upload/v1449224537/linebutton_40x40_zh-hant_tdsicv.png")
+					.support
+						a(href="/xmas") >>更多攻略參考
+
+				
+	script.
+		var page;
+		switch (false){
+				case 'week': 
+				page='ul.nav li:nth-child(1) a';
+				break;
+				case 'xmas':
+				page='ul.nav li:nth-child(2) a';
+				break;
+
+				default:
+
+				page='ul.nav li:nth-child(1) a';
+
+				}
+
+
+		//- - $( 'ul.nav li:nth-child(1) a').addClass( "on" );
+
+
+
+
+
+
+
+
+
