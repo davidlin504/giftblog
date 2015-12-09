@@ -173,7 +173,7 @@ res.redirect('/');
                     var place=req.params.slug;
                     place=place.replace(" ","%20")
 
-                res.redirect("http://line.naver.jp/R/msg/text/?http://blog.igift.tw/post/"+encodeURIComponent(place));
+                res.redirect("http://line.naver.jp/R/msg/text/?http://blogec.igift.tw/post/"+encodeURIComponent(place));
 
     });
 
