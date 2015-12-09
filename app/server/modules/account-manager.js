@@ -45,7 +45,6 @@ console.log('connected to database :: ' + dbName);
 
 /* login validation methods */
 
-http://www.facebook.com/sharer.php?u=http://blog.igift.tw/post/' + req.params.slug
 
 
 
