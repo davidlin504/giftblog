@@ -547,8 +547,7 @@ app.post('/phome/:id', function(req, res) {
 
     app.get('/post/:slug', function(req, res,next) {
 
-        var place=req.params.slug;
-                    place=place.replace(/ /g,"%20")
+     
 
   
         //    if user is not logged-in redirect back to login page //
@@ -576,8 +575,6 @@ app.post('/phome/:id', function(req, res) {
 
 app.get('/post/:slug', function(req, res) {
 
-    var place=req.params.slug;
-                    place=place.replace(/ /g,"%20")
 
       
                 
