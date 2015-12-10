@@ -7,7 +7,7 @@ var moment 		= require('moment');
 
 var dbPort 		= 27017;
 var dbHost 		= 'localhost';
-var dbName 		= 'count';
+var dbName 		= 'node-login';
 
 
 
