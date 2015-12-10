@@ -44,7 +44,7 @@ app.use(busboy());
 // and set upload directory                                                                      
 // app.use(express.bodyParser({ keepExtensions: true, uploadDir: "uploads" }));                     
 app.set('port', process.env.PORT || 3000);
-app.set('ip', process.env.IP || "127.0.0.1");
+
 app.set('views', __dirname + '/app/server/views');
 app.set('view engine', 'jade');
 app.use(cookieParser());
@@ -68,6 +68,6 @@ require('./app/server/routes')(app);
 
 if (app.get('env') == 'development') app.use(errorHandler());
 
-http.createServer(app).listen(app.get('port'),app.get('ip'), function(){
+http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));
 });
